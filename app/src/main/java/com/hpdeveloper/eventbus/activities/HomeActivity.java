@@ -1,11 +1,14 @@
-package com.hpdeveloper.eventbus;
+package com.hpdeveloper.eventbus.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
+import com.hpdeveloper.eventbus.MyApplication;
+import com.hpdeveloper.eventbus.R;
 import com.hpdeveloper.eventbus.di.modules.RxBusModule;
+import com.hpdeveloper.eventbus.services.MyService;
 
 import javax.inject.Inject;
 
@@ -23,17 +26,6 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         MyApplication.getAppComponent().inject(this);
         setContentView(R.layout.activity_home);
-
-//
-//        final Handler handler = new Handler();
-//        handler.postDelayed(new Runnable() {
-//            @Override
-//            public void run() {
-//                counter++;
-//                rxBusModule.send(counter);
-//                handler.postDelayed(this, 5000);
-//            }
-//        }, 2000);
 
         startService(new Intent(HomeActivity.this, MyService.class));
         startActivity(new Intent(HomeActivity.this, DetailsActivity.class));

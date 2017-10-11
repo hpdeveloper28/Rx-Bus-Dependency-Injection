@@ -1,10 +1,13 @@
-package com.hpdeveloper.eventbus;
+package com.hpdeveloper.eventbus.activities;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
+import com.hpdeveloper.eventbus.MyApplication;
+import com.hpdeveloper.eventbus.R;
 import com.hpdeveloper.eventbus.di.modules.RxBusModule;
+import com.hpdeveloper.eventbus.entities.UserEntity;
 
 import javax.inject.Inject;
 
@@ -35,7 +38,8 @@ public class DetailsActivity extends AppCompatActivity {
                 .subscribe(new Consumer<Object>() {
                     @Override
                     public void accept(Object object) throws Exception {
-                        Log.e("1", object.toString());
+                        UserEntity user = (UserEntity) object;
+                        Log.e("1", String.valueOf(user.userId));
                     }
                 }));
 //        retrieveData();

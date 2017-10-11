@@ -1,8 +1,8 @@
 package com.hpdeveloper.eventbus.di.components;
 
-import com.hpdeveloper.eventbus.DetailsActivity;
-import com.hpdeveloper.eventbus.HomeActivity;
-import com.hpdeveloper.eventbus.MyService;
+import com.hpdeveloper.eventbus.activities.DetailsActivity;
+import com.hpdeveloper.eventbus.activities.HomeActivity;
+import com.hpdeveloper.eventbus.services.MyService;
 import com.hpdeveloper.eventbus.di.modules.RxBusModule;
 
 import javax.inject.Singleton;
